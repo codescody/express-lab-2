@@ -5,12 +5,20 @@ app.get('/', function (req, res) {
   res.send('Hello World')
 })
 
+app.get('/tip', function (req, res) {
+  res.send('total or tip percentage')
+})
+
 app.get('/magic', function(req, res) {
   res.send('Question')
 })
 
 app.get('/greeting', function(req, res) {
     res.send('Hello, stranger')
+})
+
+app.get('/tip/:total/:tip', function (req, res) {
+  res.send(`${parseInt(req.params.total) * (parseInt(req.params.tip)) / 100}`)
 })
 
 app.get('/greeting/:name', function(req, res) {
